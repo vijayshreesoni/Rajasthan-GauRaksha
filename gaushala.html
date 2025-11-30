@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gaushala List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<h2>Nearby Gaushalas</h2>
+
+<!-- Search Box -->
+<input type="text" id="searchBox" placeholder="Search Gaushala Name">
+
+<!-- Radius Filter -->
+<select id="radiusFilter">
+    <option value="all">All</option>
+    <option value="1">1 km</option>
+    <option value="5">5 km</option>
+    <option value="10">10 km</option>
+</select>
+
+<!-- List container -->
+<div id="gaushala-list"></div>
+
+<script src="gaushaladata.js"></script>
+<script src="gaushala.js"></script>
+
+</body>
+</html>
