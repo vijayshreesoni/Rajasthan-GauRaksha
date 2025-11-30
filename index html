@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaushala Finder Rajasthan</title>
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Meta -->
+  <meta name="description" content="Find nearby gaushalas in Bikaner — space, cows, calves, charges and contact details." />
+</head>
+<body>
+  <header>
+  <div class="nav-container">
+    <div class="nav-left">
+  <img src="logo.png" alt="logo" class="logo">
+  <span class="brand-name">Rajasthan GauRaksha</span>
+</div>
+    <div class="nav-right" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="gaushala.html">Gaushala List</a>
+      <a href="contact.html">Contact</a>
+      <a href="manager-login.html" class="btn-login">Manager Login</a>
+    </div>
+
+    <div class="hamburger" id="hamburgerBtn">
+      ☰
+    </div>
+  </div>
+</header>
+  
+
+  <main>
+    <section class="hero card">
+      <h1>पास की गौशालाएँ खोजें — जल्दी और सरल</h1>
+      <p>अपनी लोकेशन डालें या 'Use My Location' दबाएँ। परिणाम लिस्ट के रूप में दिखेगा।</p>
+
+      <div class="search-row">
+        <input id="locationInput" type="text" placeholder="अपनी लोकेशन लिखें" />
+        <button onclick="searchGaushala()">Search</button>
+        <button id="findLocationBtn">Use My Location</button>
+      </div>
+
+      <div class="radius-row">
+        <label><input type="radio" name="radius" value="1" checked> 1 km</label>
+        <label><input type="radio" name="radius" value="5"> 5 km</label>
+        <label><input type="radio" name="radius" value="10"> 10 km</label>
+      </div>
+    </section>
+
+    <section id="results" class="results-section">
+      <!-- JS will fill result cards here -->
+      <p class="muted">Search results will appear here.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© Gaushala Finder — Started from Bikaner · For cow welfare</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+function searchGaushala() {
+    const locationText = document.getElementById("locationInput").value.trim();
+    const radius = document.querySelector('input[name="radius"]:checked').value;
+
+    // Show results directly on the same page
+    showResults(locationText, radius);
+}
+</script>
+</body>
+</html>
