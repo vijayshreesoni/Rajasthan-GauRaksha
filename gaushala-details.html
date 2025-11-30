@@ -1,1 +1,40 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gaushala Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Gaushala Details</h2>
+<div id="details"></div>
+
+<script src="gaushaladata.js"></script>
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+
+    const g = gaushalas.find(item => item.id === id);
+
+    if (g) {
+        document.getElementById("details").innerHTML = `
+            <div class="card">
+                <h2>${g.name}</h2>
+
+                <p><strong>Distance:</strong> ${g.distance} km</p>
+                <p><strong>Cows:</strong> ${g.cows}</p>
+                <p><strong>Calves:</strong> ${g.calves}</p>
+                <p><strong>Charges:</strong> ${g.charges}</p>
+                <p><strong>Contact:</strong> ${g.contact}</p>
+                <p><strong>Address:</strong> ${g.address}</p>
+
+                <a href="gaushala.html" class="detail-btn">Back to List</a>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
