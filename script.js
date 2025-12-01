@@ -83,7 +83,7 @@ const gaushalas = [
 
 // --------- Convert User Input Location to Coordinates ----------
 async function getCoordinates(locationText) {
-  const apiKey = "YOUR_OPENCAGE_API_KEY";
+  const apiKey = "5c137a07f7d449f7a73552c2b93ecb38h";
 
   const response = await fetch(
     `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(locationText)}&key=${apiKey}`
